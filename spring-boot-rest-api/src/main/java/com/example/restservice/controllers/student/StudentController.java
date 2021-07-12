@@ -7,7 +7,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.restservice.models.Student.Student;
-import com.example.restservice.models.tutorial.Tutorial;
 import com.example.restservice.repository.StudentRepository;
 
 //@CrossOrigin(origins = "http://localhost:8081")
@@ -30,6 +28,7 @@ public class StudentController {
 	@Autowired
     StudentRepository studentRepository;
 	
+	//1 | User Create API
 	@PostMapping("/students")
     public ResponseEntity<Student> createStudent(@RequestBody Student student) {
         try {
@@ -42,6 +41,7 @@ public class StudentController {
     }
 	
 	
+	//2 | Get user List API
 	@GetMapping("/students")
     public ResponseEntity<List<Student>> getAllStudents(@RequestParam(required = false) String first_name) {
         try {
@@ -63,6 +63,7 @@ public class StudentController {
     }
 	
 	
+	//3 | Update user API
 	@PutMapping("/students/{reg_id}")
     public ResponseEntity<Student> updateStudent(@PathVariable("reg_id") long reg_id, @RequestBody Student student) {
         Optional<Student> studentData = studentRepository.findById(reg_id);
@@ -83,6 +84,7 @@ public class StudentController {
     }
 	
 	
+	//4 | Delete all user API
 	@DeleteMapping("/students")
     public ResponseEntity<HttpStatus> deleteAllStudents() {
         try {
@@ -94,6 +96,7 @@ public class StudentController {
     }
 	
 	
+	//5 | Get user by Id API
 	@GetMapping("/students/{reg_id}")
     public ResponseEntity<Student> getStudentById(@PathVariable("reg_id") long reg_id) {
         Optional<Student> studentData = studentRepository.findById(reg_id);
@@ -105,8 +108,8 @@ public class StudentController {
         }
     }
 	
-	
-
+	/*
+	//6 | Get user by first name API
 	@GetMapping("/students/{first_name}")
     public ResponseEntity<Student> getStudentByName(@PathVariable("first_name") String first_name) {
         Optional<Student> studentData = studentRepository.findByFirstName(first_name);
@@ -117,8 +120,18 @@ public class StudentController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+	*/
 	
-	
+	//7 | Delete user by ID API
+	@DeleteMapping("/students/{reg_id}")
+    public ResponseEntity<HttpStatus> deleteStudent(@PathVariable("reg_id") long reg_id) {
+        try {
+        	studentRepository.deleteById(reg_id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 	
 
 	
