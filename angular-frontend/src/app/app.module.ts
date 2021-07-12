@@ -10,7 +10,7 @@ import { CreateTutorialComponent } from './components/tutorial/create-tutorial/c
 import { UpdateTutorialComponent } from './components/tutorial/update-tutorial/update-tutorial.component';
 import { TutorialListComponent } from './components/tutorial/tutorial-list/tutorial-list.component';
 import {FormsModule} from '@angular/forms';
-import { AddDoctorComponent } from './doctor/add-doctor/add-doctor.component';
+import { AddStudentComponent } from './components/student/add-student/add-student.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { AddDoctorComponent } from './doctor/add-doctor/add-doctor.component';
     CreateTutorialComponent,
     UpdateTutorialComponent,
     TutorialListComponent,
-    AddDoctorComponent
+    AddStudentComponent,
   ],
     imports: [
         RouterModule,

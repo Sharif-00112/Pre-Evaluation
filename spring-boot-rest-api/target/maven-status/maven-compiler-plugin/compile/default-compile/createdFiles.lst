@@ -1,3 +1,11 @@
+com\example\restservice\models\Student\StudentInfo.class
+com\example\restservice\models\Student\StudentRegistration.class
+com\example\restservice\models\Student\Student.class
+com\example\restservice\repository\StudentRepository.class
+com\example\restservice\models\tutorial\Tutorial.class
+com\example\restservice\controllers\tutorial\TutorialController.class
 com\example\restservice\RestServiceApplication.class
 com\example\restservice\GreetingController.class
 com\example\restservice\Greeting.class
+com\example\restservice\controllers\student\StudentController.class
+com\example\restservice\repository\TutorialRepository.class

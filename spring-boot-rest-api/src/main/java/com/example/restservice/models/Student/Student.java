@@ -1,7 +1,7 @@
 package com.example.restservice.models.Student;
 
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -12,22 +12,22 @@ import javax.persistence.*;
 public class Student{
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long reg_id;
+    private long id;
 
-    @Column(name = "institution_id")
-    private String institution_id;
+    @Column(name = "institutionid")
+    private String institutionid;
 
-    @Column(name = "student_id")
-    private String student_id;
+    @Column(name = "studentid")
+    private String studentid;
 
-    @Column(name = "first_name")
-    private String first_name;
+    @Column(name = "firstname")
+    private String firstname;
     
-    @Column(name = "last_name")
-    private String last_name;
+    @Column(name = "lastname")
+    private String lastname;
     
-    @Column(name = "date_of_birth")
-    private Date date_of_birth;
+    @Column(name = "dateofbirth")
+    private Date dateofbirth;
     
     @Column(name = "gender")
     private String gender;
@@ -40,76 +40,72 @@ public class Student{
 	    	
 	    }
 
-	public Student(long reg_id, String institution_id, String student_id, String first_name, String last_name,
-			Date date_of_birth, String gender, String email) {
-		this.reg_id = reg_id;
-		this.institution_id = institution_id;
-		this.student_id = student_id;
-		this.first_name = first_name;
-		this.last_name = last_name;
-		this.date_of_birth = date_of_birth;
+
+	public Student(String institutionid, String studentid, String firstname, String lastname, Date dateofbirth,
+			String gender, String email) {
+		super();
+		this.institutionid = institutionid;
+		this.studentid = studentid;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.dateofbirth = dateofbirth;
 		this.gender = gender;
 		this.email = email;
 	}
 
 
-	public long getReg_id() {
-		return reg_id;
+	public long getId() {
+        return id;
+    }
+
+
+	public String getInstitutionid() {
+		return institutionid;
 	}
 
 
-	public void setReg_id(long reg_id) {
-		this.reg_id = reg_id;
+	public void setInstitutionid(String institutionid) {
+		this.institutionid = institutionid;
 	}
 
 
-	public String getInstitution_id() {
-		return institution_id;
+	public String getStudentid() {
+		return studentid;
 	}
 
 
-	public void setInstitution_id(String institution_id) {
-		this.institution_id = institution_id;
+	public void setStudentid(String studentid) {
+		this.studentid = studentid;
 	}
 
 
-	public String getStudent_id() {
-		return student_id;
+	public String getFirstname() {
+		return firstname;
 	}
 
 
-	public void setStudent_id(String student_id) {
-		this.student_id = student_id;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 
 
-	public String getFirst_name() {
-		return first_name;
+	public String getLastname() {
+		return lastname;
 	}
 
 
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
 
-	public String getLast_name() {
-		return last_name;
+	public Date getDateofbirth() {
+		return dateofbirth;
 	}
 
 
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
-	}
-
-
-	public Date getDate_of_birth() {
-		return date_of_birth;
-	}
-
-
-	public void setDate_of_birth(Date date_of_birth) {
-		this.date_of_birth = date_of_birth;
+	public void setDateofbirth(Date dateofbirth) {
+		this.dateofbirth = dateofbirth;
 	}
 
 
@@ -135,10 +131,11 @@ public class Student{
 
 	@Override
 	public String toString() {
-		return "Student [reg_id=" + reg_id + ", institution_id=" + institution_id + ", student_id=" + student_id
-				+ ", first_name=" + first_name + ", last_name=" + last_name + ", date_of_birth=" + date_of_birth
-				+ ", gender=" + gender + ", email=" + email + "]";
+		return "Student [regid=" + id + ", institutionid=" + institutionid + ", studentid=" + studentid
+				+ ", firstname=" + firstname + ", lastname=" + lastname + ", dateofbirth=" + dateofbirth + ", gender="
+				+ gender + ", email=" + email + "]";
 	}
+
 	
 	
 	

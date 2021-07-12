@@ -1,6 +1,13 @@
+C:\Users\bluec\Desktop\Demo\Pre-Evaluation\spring-boot-rest-api\src\main\java\com\example\restservice\controllers\student\StudentRegistrationController.java
+C:\Users\bluec\Desktop\Demo\Pre-Evaluation\spring-boot-rest-api\src\main\java\com\example\restservice\models\Student\StudentInfo.java
+C:\Users\bluec\Desktop\Demo\Pre-Evaluation\spring-boot-rest-api\src\main\java\com\example\restservice\repository\StudentRepository.java
+C:\Users\bluec\Desktop\Demo\Pre-Evaluation\spring-boot-rest-api\src\main\java\com\example\restservice\models\Student\Student.java
+C:\Users\bluec\Desktop\Demo\Pre-Evaluation\spring-boot-rest-api\src\main\java\com\example\restservice\controllers\student\StudentInfoController.java
 C:\Users\bluec\Desktop\Demo\Pre-Evaluation\spring-boot-rest-api\src\main\java\com\example\restservice\controllers\tutorial\TutorialController.java
+C:\Users\bluec\Desktop\Demo\Pre-Evaluation\spring-boot-rest-api\src\main\java\com\example\restservice\models\Student\StudentRegistration.java
 C:\Users\bluec\Desktop\Demo\Pre-Evaluation\spring-boot-rest-api\src\main\java\com\example\restservice\repository\TutorialRepository.java
 C:\Users\bluec\Desktop\Demo\Pre-Evaluation\spring-boot-rest-api\src\main\java\com\example\restservice\RestServiceApplication.java
+C:\Users\bluec\Desktop\Demo\Pre-Evaluation\spring-boot-rest-api\src\main\java\com\example\restservice\controllers\student\StudentController.java
 C:\Users\bluec\Desktop\Demo\Pre-Evaluation\spring-boot-rest-api\src\main\java\com\example\restservice\Greeting.java
 C:\Users\bluec\Desktop\Demo\Pre-Evaluation\spring-boot-rest-api\src\main\java\com\example\restservice\GreetingController.java
 C:\Users\bluec\Desktop\Demo\Pre-Evaluation\spring-boot-rest-api\src\main\java\com\example\restservice\models\tutorial\Tutorial.java
