@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.restservice.models.Student.Student;
+import com.example.restservice.models.tutorial.Tutorial;
 import com.example.restservice.repository.StudentRepository;
 
 //@CrossOrigin(origins = "http://localhost:8081")
@@ -28,6 +29,18 @@ public class StudentController {
 	
 	@Autowired
     StudentRepository studentRepository;
+	
+	@PostMapping("/students")
+    public ResponseEntity<Student> createStudent(@RequestBody Student student) {
+        try {
+        	Student _student = studentRepository
+                    .save(new Student(student.getReg_id(), student.getInstitution_id(), student.getStudent_id(), student.getFirst_name(), student.getLast_name(), student.getDate_of_birth(), student.getGender(), student.getEmail()));
+            return new ResponseEntity<>(_student, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+	
 	
 	@GetMapping("/students")
     public ResponseEntity<List<Student>> getAllStudents(@RequestParam(required = false) String first_name) {
