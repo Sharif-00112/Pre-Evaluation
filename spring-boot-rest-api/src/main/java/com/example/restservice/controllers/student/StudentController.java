@@ -63,6 +63,26 @@ public class StudentController {
     }
 	
 	
+	@PutMapping("/students/{reg_id}")
+    public ResponseEntity<Student> updateStudent(@PathVariable("reg_id") long reg_id, @RequestBody Student student) {
+        Optional<Student> studentData = studentRepository.findById(reg_id);
+
+        if (studentData.isPresent()) {
+        	Student _student = studentData.get();
+        	_student.setInstitution_id(student.getInstitution_id());
+        	_student.setStudent_id(student.getStudent_id());
+        	_student.setFirst_name(student.getFirst_name());
+        	_student.setLast_name(student.getLast_name());
+        	_student.setDate_of_birth(student.getDate_of_birth());
+        	_student.setGender(student.getGender());
+        	_student.setEmail(student.getEmail());
+            return new ResponseEntity<>(studentRepository.save(_student), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+	
+	
 	
 	
 }
