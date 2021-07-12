@@ -106,6 +106,20 @@ public class StudentController {
     }
 	
 	
+
+	@GetMapping("/students/{first_name}")
+    public ResponseEntity<Student> getStudentByName(@PathVariable("first_name") String first_name) {
+        Optional<Student> studentData = studentRepository.findByFirstName(first_name);
+
+        if (studentData.isPresent()) {
+            return new ResponseEntity<>(studentData.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 	
+	
+	
+
 	
 }
