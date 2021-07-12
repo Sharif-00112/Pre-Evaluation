@@ -94,6 +94,18 @@ public class StudentController {
     }
 	
 	
+	@GetMapping("/students/{reg_id}")
+    public ResponseEntity<Student> getStudentById(@PathVariable("reg_id") long reg_id) {
+        Optional<Student> studentData = studentRepository.findById(reg_id);
+
+        if (studentData.isPresent()) {
+            return new ResponseEntity<>(studentData.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+	
+	
 	
 	
 }

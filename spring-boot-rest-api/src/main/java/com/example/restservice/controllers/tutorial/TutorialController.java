@@ -29,6 +29,7 @@ public class TutorialController {
     @Autowired
     TutorialRepository tutorialRepository;
 
+    //done
     @GetMapping("/tutorials")
     public ResponseEntity<List<Tutorial>> getAllTutorials(@RequestParam(required = false) String title) {
         try {
@@ -49,6 +50,7 @@ public class TutorialController {
         }
     }
 
+    //done
     @GetMapping("/tutorials/{id}")
     public ResponseEntity<Tutorial> getTutorialById(@PathVariable("id") long id) {
         Optional<Tutorial> tutorialData = tutorialRepository.findById(id);
@@ -60,6 +62,7 @@ public class TutorialController {
         }
     }
 
+    //done
     @PostMapping("/tutorials")
     public ResponseEntity<Tutorial> createTutorial(@RequestBody Tutorial tutorial) {
         try {
@@ -71,6 +74,8 @@ public class TutorialController {
         }
     }
 
+    
+    //done
     @PutMapping("/tutorials/{id}")
     public ResponseEntity<Tutorial> updateTutorial(@PathVariable("id") long id, @RequestBody Tutorial tutorial) {
         Optional<Tutorial> tutorialData = tutorialRepository.findById(id);
@@ -96,6 +101,7 @@ public class TutorialController {
         }
     }
 
+    //Done
     @DeleteMapping("/tutorials")
     public ResponseEntity<HttpStatus> deleteAllTutorials() {
         try {
@@ -104,7 +110,6 @@ public class TutorialController {
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
     }
 
     @GetMapping("/tutorials/published")
