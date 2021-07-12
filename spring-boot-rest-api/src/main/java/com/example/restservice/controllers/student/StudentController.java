@@ -83,6 +83,17 @@ public class StudentController {
     }
 	
 	
+	@DeleteMapping("/students")
+    public ResponseEntity<HttpStatus> deleteAllStudents() {
+        try {
+        	studentRepository.deleteAll();
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+	
+	
 	
 	
 }
