@@ -1,6 +1,8 @@
 package com.example.restservice.models.Student;
 
 
+import java.sql.Date;
+
 import javax.persistence.*;
 
 
@@ -25,7 +27,7 @@ public class Student{
     private String last_name;
     
     @Column(name = "date_of_birth")
-    private String date_of_birth;
+    private Date date_of_birth;
     
     @Column(name = "gender")
     private String gender;
@@ -39,7 +41,7 @@ public class Student{
 	    }
 
 	public Student(long reg_id, String institution_id, String student_id, String first_name, String last_name,
-			String date_of_birth, String gender, String email) {
+			Date date_of_birth, String gender, String email) {
 		this.reg_id = reg_id;
 		this.institution_id = institution_id;
 		this.student_id = student_id;
@@ -101,12 +103,12 @@ public class Student{
 	}
 
 
-	public String getDate_of_birth() {
+	public Date getDate_of_birth() {
 		return date_of_birth;
 	}
 
 
-	public void setDate_of_birth(String date_of_birth) {
+	public void setDate_of_birth(Date date_of_birth) {
 		this.date_of_birth = date_of_birth;
 	}
 
